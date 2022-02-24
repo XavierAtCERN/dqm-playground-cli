@@ -4,7 +4,7 @@ import pandas as pd
 
 ENDPOINT_RUNS = ''
 ENDPOINT_RUN_CERTIFICATION = ''
-ENDPOINT_RUN_HISTOS = ''
+ENDPOINT_RUN_HISTOS = 'https://ml4dqm-playground.web.cern.ch/runHistos/API/?primary_dataset=JetHT&run__run_number__in='
 
 ENDPOINT_LUMISECTIONS = ''
 ENDPOINT_LUMISECTION_CERTIFICATION = ''
@@ -19,21 +19,25 @@ def get_runs():
     print(run_numbers)
     return
 
-def get_variables():
-    variables = ['mean', 'rms', 'kurtosis']
-    print(variables
+def get_variables(run_number):
+    run_endpoint = ENDPOINT_RUN_HISTOS+f'{run_number}'
+    response = requests.get(run_endpoint)
+    print(f'response status code: {response.status_code}')
+    df = pd.read_json(response.text)
+    print(df['title'].tolist())
     return
 
 @click.command()
 @click.option('--run_list', default=False, help='Provides list of runs.')
 @click.option('--variable_list', default=False, help='Provides list of variables.')
-def cli(run_list, variable_list):
+@click.option('--run_number', default=0, help='Run number for variable exploration.')
+def cli(run_list, variable_list, run_number):
     """Simple program that provides list of runs / list of variables"""
     if run_list == True:
         print('List of runs available')
         get_runs()
     elif variable_list == True:
         print('List of variables available')
-        get_variables()
+        get_variables(run_number)
     else:
-        return
+        print('')

@@ -4,6 +4,11 @@
 
 The goal of this package is to provide a user interface between the [DQM Playground](https://github.com/CMSTrackerDPG/MLplayground) DB aiming at gathering information from various sources and the data science framework chosen to create models for anomaly detection.
 
+To build the cli:
+```
+pip3 install --editable .
+```
+
 A naive skeleton of the cli (built using [Click](https://click.palletsprojects.com/en/8.0.x/)) is the following:
 ```
 dqm_playground_cli --help
@@ -28,14 +33,4 @@ dqm_playground_cli --run_list=True
 Accessing all variables from a given run (315257):
 ```
 dqm_playground_cli --variable_list=True --run_number=315257
-```
-
-Restricting to a given subsystem (Tracking):
-```
-dqm_playground_cli --variable_list=True --run_number=315257 --subsystem=Tracking
-```
-
-Restricting to a given (sub-)workspace:
-```
-dqm_playground_cli --variable_list=True --run_number=315257 --subsystem=Tracking --workspace=GeneralProperties/Chi2_GenTk
 ```
