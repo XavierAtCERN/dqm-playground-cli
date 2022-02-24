@@ -1,5 +1,7 @@
 # dqm-playground-cli
 
+[![Build Status](https://app.travis-ci.com/XavierAtCERN/dqm-playground-cli.svg?branch=main)](https://app.travis-ci.com/XavierAtCERN/dqm-playground-cli)
+
 The goal of this package is to provide a user interface between the [DQM Playground](https://github.com/CMSTrackerDPG/MLplayground) DB aiming at gathering information from various sources and the data science framework chosen to create models for anomaly detection.
 
 A naive skeleton of the cli (built using [Click](https://click.palletsprojects.com/en/8.0.x/)) is the following:
