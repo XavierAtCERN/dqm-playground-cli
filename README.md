@@ -6,6 +6,10 @@ The goal of this package is to provide a user interface between the [DQM Playgro
 
 To build the cli:
 ```
+git clone https://github.com/XavierAtCERN/dqm-playground-cli
+
+cd dqm-playground-cli
+pip3 install --upgrade -r requirements.txt
 pip3 install --editable .
 ```
 
