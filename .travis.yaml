@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.8"
+
+install:
+  - pip3 install --editable .
+
+script:
+  - dqm_playground_cli --help
+  - dqm_playground_cli --run_list=True
+  - dqm_playground_cli --variable_list=True
