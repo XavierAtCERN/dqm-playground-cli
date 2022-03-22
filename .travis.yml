@@ -12,5 +12,9 @@ script:
   - dqm_playground_cli runs --variable_list=True --run_number=315257
 
   - dqm_playground_cli lumisections --help
+  - dqm_playground_cli lumisections --run_number=0 --lumisection_list True
+  - dqm_playground_cli lumisections --run_number=297176 --lumisection_list True
 
   - dqm_playground_cli tasks --help
+  - dqm_playground_cli tasks --run_number=297176 --dummy_task True
+  - dqm_playground_cli tasks --run_number=297176 --variables_for_task True

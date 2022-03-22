@@ -58,6 +58,11 @@ Options:
   --help                      Show this message and exit.
 ```
 
+Accessing all lumisections from a given run:
+```
+dqm_playground_cli lumisections --run_number=0 --lumisection_list True # run not in the DB
+dqm_playground_cli lumisections --run_number=297176 --lumisection_list True # run in the DB
+```
 
 ### Tasks
 
@@ -68,7 +73,22 @@ Usage: dqm_playground_cli tasks [OPTIONS]
   This subcommand provides a list of the avaiable tasks
 
 Options:
-  --help  Show this message and exit.
+  --run_number INTEGER          Run number for lumisection exploration
+  --dummy_task BOOLEAN          Create dummy task by sampling 10 lumisections
+                                from run_number
+  --variables_for_task BOOLEAN  Create file with variables needed for (dummy)
+                                task
+  --help                        Show this message and exit.
+```
+
+Creating a dummy task (runs+lumisections)
+```
+dqm_playground_cli tasks --run_number=297176 --dummy_task True
+```
+
+Extracting variables for a specific task
+```
+dqm_playground_cli tasks --run_number=297176 --variables_for_task True
 ```
 
 ### Going further
