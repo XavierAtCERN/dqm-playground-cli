@@ -59,7 +59,7 @@ Options:
 ```
 
 Accessing all lumisections from a given run:
-```
+```bash
 dqm_playground_cli lumisections --run_number=0 --lumisection_list True # run not in the DB
 dqm_playground_cli lumisections --run_number=297176 --lumisection_list True # run in the DB
 ```
@@ -82,12 +82,12 @@ Options:
 ```
 
 Creating a dummy task (runs+lumisections)
-```
+```bash
 dqm_playground_cli tasks --run_number=297176 --dummy_task True
 ```
 
 Extracting variables for a specific task
-```
+```bash
 dqm_playground_cli tasks --run_number=297176 --variables_for_task True
 ```
 

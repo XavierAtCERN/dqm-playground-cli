@@ -80,10 +80,11 @@ def get_variables_for_task(task):
 
     # select relevant run + lumi through merge
     # this should be moved to the backend side later
-    variables = task.merge(df, on=['run', 'lumisection']) 
+    variables = task.merge(df, how='inner', on=['run', 'lumisection']) 
     click.echo("Merged to select run+lumisections")
     click.echo(variables.head())
-    df[["run", "lumisection", "title", "data"]].to_csv("inputs_to_data_science.csv", index=False)
+    click.echo(variables.shape[0])
+    variables[["run", "lumisection", "title", "data"]].to_csv("inputs_to_data_science.csv", index=False)
     return
 
 # click context
