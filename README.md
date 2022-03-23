@@ -3,7 +3,15 @@
 [![Build Status](https://app.travis-ci.com/XavierAtCERN/dqm-playground-cli.svg?branch=main)](https://app.travis-ci.com/XavierAtCERN/dqm-playground-cli)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+## Project overview
+
 The goal of this package is to provide a user interface between the [DQM Playground](https://github.com/CMSTrackerDPG/MLplayground) DB aiming at gathering information from various sources and the data science framework chosen to create models for anomaly detection.
+
+An overview of the architecture of the project highlighting the role of the CLI can be found below.
+
+![Architecture of the project](./images/CLI.jpeg?raw=true "Architecture of the project")
+
+## Setting up the CLI
 
 To build the cli:
 ```bash
